@@ -1,0 +1,59 @@
+THE WITCHER 2 — UNIVERSAL DUAL SUBTITLES v2.0
+BUILT-IN GUIDE TEXT
+
+QUICK START
+1. Select Primary language — it is shown first.
+2. Select Secondary language — it is added after  ~ .
+3. Click INSTALL DUAL SUBTITLES.
+4. Launch the game with the Text Language required by the selected pair.
+
+STANDARD / NON-CJK
+English + Polish -> Text Language = English
+English + Russian -> Text Language = English
+Polish + English -> Text Language = Polish
+
+CHINESE
+Chinese Primary:
+    Primary = Chinese
+    Secondary = English/non-CJK
+    Text Language = Chinese
+
+Chinese Secondary:
+    Primary = English/non-CJK
+    Secondary = Chinese
+    Text Language = Chinese
+
+Example:
+    English + Chinese
+    NEW GAME ~ 新游戏
+
+JAPANESE
+Japanese Primary:
+    Primary = Japanese
+    Secondary = English/non-CJK
+    Text Language = Japanese
+
+Japanese Secondary:
+    Primary = English/non-CJK
+    Secondary = Japanese
+    Text Language = Japanese
+
+Example:
+    English + Japanese
+    NEW GAME ~ 新しいゲーム
+
+CJK LIMIT
+Chinese + Japanese is blocked. Choose one CJK language plus one non-CJK
+language. The game can use one CJK text/font path at a time.
+
+FONT POLICY
+The tool intentionally does not modify fonts.swf, cfonts.swf, fonts_zh.swf,
+fonts_jp.swf, or fonts.csv. CJK support is handled by selecting the actual
+Chinese/Japanese Text Language in the game. A separate compatible CJK font
+mod may be needed if the user specifically wants CJK glyphs while keeping
+the game Text Language = English.
+
+BACKUPS
+Every target file receives a clean backup before the first rebuild.
+Every later rebuild starts from that clean backup, preventing duplicate
+subtitles. RESTORE ORIGINAL returns that backup.

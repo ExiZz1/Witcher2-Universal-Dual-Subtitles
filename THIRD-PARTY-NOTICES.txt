@@ -1,0 +1,22 @@
+THIRD-PARTY SOFTWARE NOTICE
+
+Gibbed RED Tools
+
+This package includes Gibbed RED Tools by Rick (gibbed), used for reading and
+writing The Witcher 2 .w2strings files.
+
+Repository:
+https://github.com/gibbed/Gibbed.RED
+
+The original Gibbed license.txt is included unchanged in the "Gibbed RED Tools"
+folder.
+
+The tool also contains an independently implemented Turkish compatibility
+reader/writer for tr0.w2strings because the bundled Gibbed build does not
+contain the required Turkish file-key mapping.
+
+CJK FONT POLICY
+This package intentionally does not bundle or install third-party CJK font
+files. Chinese/Japanese dual subtitles use the game's corresponding CJK Text
+Language path. Users who install separate font modifications are responsible
+for their compatibility and licensing.

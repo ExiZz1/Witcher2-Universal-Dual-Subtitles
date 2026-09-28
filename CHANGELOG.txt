@@ -1,0 +1,30 @@
+The Witcher 2 — Universal Dual Subtitles v2.1 FINAL
+Created by ExiZz
+
+v2.1 FINAL
+- Added a one-click portable launcher.
+- No system-wide Python installation is required.
+- On first launch, the launcher downloads official Python 3.13.15
+  from python.org into the package's private runtime folder.
+- Subsequent launches work offline using that private runtime.
+- Added creator credit: Tarpe.
+- Kept bundled Gibbed RED Tools.
+- Kept the built-in Chinese/Japanese/standard language guide.
+- Kept automatic backup/restore and duplicate-safe rebuilding.
+
+v2.0
+- Added built-in GUIDE.
+- Chinese/Japanese use the CJK game language path.
+- Font files are never modified automatically.
+
+v2.1.1 FIXED
+- Fixed START_HERE.bat: it now detects an existing Python installation first.
+- If Python is already installed, no runtime download is attempted.
+- If Python is not installed, the official Python installer runs visibly instead of silently.
+- The launcher reports the installer exit code when the private runtime cannot be created.
+
+
+v2.2.1 FINAL FIXED
+- Fixed Turkish Primary: tr0.w2strings is never sent through Gibbed decoder.
+- Native Turkish compatibility mode is now used from the first processing step.
+- Browse... and existing v2.2 functionality retained.
