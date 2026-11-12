@@ -8,15 +8,54 @@ writing The Witcher 2 .w2strings files.
 Repository:
 https://github.com/gibbed/Gibbed.RED
 
-The original Gibbed license.txt is included unchanged in the "Gibbed RED Tools"
-folder.
+The original Gibbed license text is included as Licenses/Gibbed-RED.txt.
 
 The tool also contains an independently implemented Turkish compatibility
 reader/writer for tr0.w2strings because the bundled Gibbed build does not
 contain the required Turkish file-key mapping.
 
-CJK FONT POLICY
-This package intentionally does not bundle or install third-party CJK font
-files. Chinese/Japanese dual subtitles use the game's corresponding CJK Text
-Language path. Users who install separate font modifications are responsible
-for their compatibility and licensing.
+FONT RESOURCES
+
+The Noto donor outline catalog is distributed under SIL Open Font License 1.1.
+See Licenses/Noto-Notice.txt and Licenses/Noto-OFL-1.1.txt. Stock game resources
+are read from the game installation and are not included in this ZIP.
+
+FREETYPE
+
+Portions of this software are copyright (c) 2025 The FreeType Project
+(www.freetype.org). All rights reserved.
+The application uses FT_Outline_EmboldenXY for the Chinese outlines.
+The accompanying Win64 FreeType 2.14.2 component was obtained from the
+Oracle JDK 21.0.12.1. The complete accompanying notice is
+included as Licenses/FreeType.md. FreeType is used under the FTL.
+https://freetype.org/license
+
+
+WINDOWS RUNTIME AND BUILD TOOL NOTICES
+
+CPython 3.13.15 by the Python Software Foundation. See Licenses/Python.txt
+for the PSF terms and included runtime notices, including Microsoft
+Distributable Code, bzip2, libffi, Tcl and Tk. The Windows VC runtime files
+shipped with the build are Microsoft Distributable Code.
+
+Tcl/Tk 8.6 is bundled for the UI. See Licenses/Tcl-Tk.txt and the Python
+runtime notice.
+
+OpenSSL 3.0.21 libcrypto by the OpenSSL Project Authors is included with the Python
+runtime. See Licenses/Apache-2.0.txt and
+https://openssl-library.org/source/license/
+
+The bundled CPython extensions also use Expat 2.8.2, zlib 1.3.1 and the
+liblzma core library from XZ Utils. See Licenses/Expat.txt,
+Licenses/zlib.txt and Licenses/liblzma-0BSD.txt.
+
+PyInstaller 6.22.3 and pyinstaller-hooks-contrib 2026.7 are used to build
+the Windows application. See Licenses/PyInstaller.txt and
+Licenses/PyInstaller-Hooks.txt for the respective license terms, including
+the PyInstaller exception.
+
+NDesk.Options by Jonathan Pryor/Novell is bundled with Gibbed. See
+Licenses/NDesk-Options.txt and Licenses/Gibbed-RED.txt.
+
+FreeType is used for the Chinese outline adjustments in both profiles.
+

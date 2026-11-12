@@ -1,54 +1,28 @@
-# Build Guide — The Witcher 2 Universal Dual Subtitles
+# Building The Witcher 2 Universal Dual Subtitles v3.0
 
-## Requirements
+Use official Windows x64 CPython 3.13.15 with Tcl/Tk enabled. The builder needs Python and the pinned dependencies in requirements-build.txt. Players use the portable release.
 
-- Windows 10/11
-- Python 3.13 (64-bit recommended)
-- Internet access during the first build so PyInstaller can be installed with pip
-- The included Gibbed RED Tools files
+## Obtain third-party build inputs
 
-## Build
+- Gibbed RED Tools by Rick. Use the Strings and Unpack EXEs plus Gibbed.IO.dll, Gibbed.RED.FileFormats.dll and NDesk.Options.dll. Gibbed.RED.Pack.exe is only needed for integration fixtures. The [Gibbed tools archive page](https://www.nexusmods.com/witcher2/mods/768?tab=files) is an upstream distribution mirror. Its file revisions may differ. For an exact build, use the copy from the earlier ExiZz distribution or a dependency folder whose files match third-party-lock.json. The staging script accepts an extracted tool directory or a ZIP containing the files. Extract a 7z or installer using its normal tools first.
+- Win64 FreeType 2.14.2 from the [Oracle JDK 21.0.12.1 x64 archive](https://download.oracle.com/java/21/archive/jdk-21.0.12.1_windows-x64_bin.zip). Pass the ZIP, the extracted JDK folder or its bin/freetype.dll to the staging script. The application redistributes the FreeType library under its accompanying FTL notice. It uses no Java runtime.
+- The OFL Noto outline catalog and supplemental control outline data are committed under resources/. Rebuilding the app uses these source data directly.
 
-1. Open Command Prompt in this repository folder.
-2. Make sure `py` or `python` points to the intended Python installation.
-3. Run:
+The lock file covers third-party build binaries only. It does not set requirements on hashes of game resources. The build accepts exact inputs for reproducibility and the staging script copies only recognized, hash-verified components. It never runs a downloaded installer.
 
-```bat
-BUILD_EXE.bat
+## Build from the repository root
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-build.txt
+.\.venv\Scripts\python.exe prepare_dependencies.py --gibbed 'C:\path\to\Gibbed tools' --freetype 'C:\path\to\JDK.zip'
+.\.venv\Scripts\python.exe build_windows.py
 ```
 
-The script:
+Use the exact Python version if several are installed. BUILD_EXE.bat is equivalent to invoking build_windows.py. Set W2_BUILD_PYTHON to the desired Python executable if it is not on PATH.
 
-- removes previous `build` and `dist` folders;
-- installs/updates PyInstaller with pip;
-- builds a Windows GUI application with PyInstaller in `--onedir` mode;
-- copies the `Gibbed RED Tools` directory into the application;
-- creates:
+Output is build-v3.0/dist/Witcher2_Universal_Dual_Subtitles/. Keep the EXE next to _internal. The build expands PyInstaller's Python bootstrap modules into _internal so the application directory contains no nested ZIP. Keep the loose .pyc bootstrap modules together with the rest of the runtime. They are generated and absent from source control.
 
-```text
-dist\Witcher2_Universal_Dual_Subtitles\Witcher2_Universal_Dual_Subtitles.exe
-```
+To check reproducibility, run the build twice with the same pinned toolchain and dependency inputs. Use --output to choose separate directories. Compare hashes of each relative path in the resulting application directories. The standalone Nexus distribution adds the player README and the license notices to this output.
 
-## Manual PyInstaller command
-
-The build script uses:
-
-```text
-py -m PyInstaller --noconfirm --clean --onedir --windowed --name "Witcher2_Universal_Dual_Subtitles" --add-data "Gibbed RED Tools;Gibbed RED Tools" Witcher2_Dual_Subtitles_Tool.py
-```
-
-## Runtime layout
-
-The executable must remain together with the `_internal` directory produced by PyInstaller. The bundled application also needs the `Gibbed RED Tools` directory inside `_internal` as created by the build.
-
-## Notes
-
-The tool is a standalone Windows GUI utility for The Witcher 2: Assassins of Kings. It processes `.w2strings` localization files, merges matching text IDs, and writes the generated localization back to the selected game language slot.
-
-The confirmed subtitle separator used by the final release is:
-
-```text
- ~ 
-```
-
-The tool does not modify game font files.
+See [tests/REPRODUCE.md](tests/REPRODUCE.md) for fixtures and regression commands.

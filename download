@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+build*/
+dist/
+bin/
+obj/
+*.spec
+*.log
+*.zip
+*.rar
+*.7z
+*.dzip
+*.w2strings
+*.swf
+/Gibbed RED Tools/*.exe
+/Gibbed RED Tools/*.dll
+/resources/freetype.dll

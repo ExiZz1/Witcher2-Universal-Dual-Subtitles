@@ -1,0 +1,20 @@
+ExiZz P2 OFL fallback glyph catalog
+==================================
+
+donor.json contains a subset of outlines from the following SIL Open Font
+License 1.1 fonts, converted to DefineFont3 coordinates for this experiment.
+
+Noto Sans CJK JP
+Copyright 2014–2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.
+Upstream: https://github.com/notofonts/noto-cjk
+License: https://github.com/notofonts/noto-cjk/blob/main/Sans/LICENSE
+
+Noto Sans
+Copyright 2015–2021 Google LLC. All Rights Reserved.
+Upstream: https://github.com/notofonts/latin-greek-cyrillic
+License notice extracted from name IDs 13 and 14 of the licensed local TTF.
+
+The accompanying OFL-1.1.txt applies to the donor outlines.
+The catalog contains no stock game glyphs. Stock SWF files, patched stock SWFs,
+localization files and font binaries are not packaged.
+
